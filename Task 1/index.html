@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Григорий — Python-разработчик</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="#hero" class="nav__logo">Григорий</a>
+            <button class="nav__toggle" id="navToggle" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav__menu" id="navMenu">
+                <li><a href="#about" class="nav__link">О себе</a></li>
+                <li><a href="#education" class="nav__link">Образование</a></li>
+                <li><a href="#skills" class="nav__link">Навыки</a></li>
+                <li><a href="#projects" class="nav__link">Проекты</a></li>
+                <li><a href="#experience" class="nav__link">Опыт</a></li>
+                <li><a href="#contacts" class="nav__link">Контакты</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                        <span class="theme-toggle__icon theme-toggle__icon--moon">&#9790;</span>
+                        <span class="theme-toggle__icon theme-toggle__icon--sun">&#9788;</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container hero__content">
+                <div class="hero__avatar" aria-hidden="true"></div>
+                <h1 class="hero__title">Григорий</h1>
+                <p class="hero__subtitle">Python-разработчик</p>
+                <p class="hero__description">Студент 4 курса СПБГУПТД. Разрабатываю серверные приложения, работаю с API и базами данных. Ищу возможности для профессионального роста в команде backend-разработки.</p>
+                <div class="hero__actions">
+                    <a href="#contacts" class="btn btn--primary">Связаться</a>
+                    <a href="#projects" class="btn btn--outline">Проекты</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about fade-in">
+            <div class="container">
+                <h2 class="section__title">О себе</h2>
+                <div class="about__content">
+                    <p>Студент 4 курса Санкт-Петербургского государственного университета промышленных технологий и дизайна. Специализируюсь на backend-разработке с использованием Python.</p>
+                    <p>Имею опыт работы с REST API, сериализацией данных в формате JSON, реляционными базами данных. Увлекаюсь автоматизацией процессов и написанием чистого, поддерживаемого кода. В свободное время изучаю новые технологии и участвую в open-source проектах.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section education fade-in">
+            <div class="container">
+                <h2 class="section__title">Образование</h2>
+                <div class="education__item">
+                    <div class="education__header">
+                        <h3 class="education__title">СПБГУПТД</h3>
+                        <span class="education__period">2021 — 2025 (ожидается)</span>
+                    </div>
+                    <p class="education__details">4 курс, направление «Информатика и вычислительная техника»</p>
+                    <p class="education__description">Изучаю алгоритмы и структуры данных, базы данных, веб-разработку, объектно-ориентированное программирование. Курсовые проекты связаны с разработкой веб-приложений и REST API.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills fade-in">
+            <div class="container">
+                <h2 class="section__title">Навыки</h2>
+                <div class="skills__filters">
+                    <button class="filter-btn filter-btn--active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="backend">Backend</button>
+                    <button class="filter-btn" data-filter="tools">Инструменты</button>
+                    <button class="filter-btn" data-filter="soft">Soft Skills</button>
+                </div>
+                <div class="skills__grid" id="skillsGrid">
+                    <div class="skill-card" data-category="backend">
+                        <h3 class="skill-card__title">Python</h3>
+                        <p class="skill-card__desc">Django, Flask, FastAPI, асинхронное программирование</p>
+                    </div>
+                    <div class="skill-card" data-category="backend">
+                        <h3 class="skill-card__title">REST API</h3>
+                        <p class="skill-card__desc">Проектирование и разработка RESTful эндпоинтов</p>
+                    </div>
+                    <div class="skill-card" data-category="backend">
+                        <h3 class="skill-card__title">SQL</h3>
+                        <p class="skill-card__desc">PostgreSQL, SQLite, SQLAlchemy, миграции</p>
+                    </div>
+                    <div class="skill-card" data-category="tools">
+                        <h3 class="skill-card__title">Git</h3>
+                        <p class="skill-card__desc">Git Flow, GitHub, ветвление, code review</p>
+                    </div>
+                    <div class="skill-card" data-category="tools">
+                        <h3 class="skill-card__title">JSON</h3>
+                        <p class="skill-card__desc">Сериализация, валидация схем, работа с API</p>
+                    </div>
+                    <div class="skill-card" data-category="tools">
+                        <h3 class="skill-card__title">Docker</h3>
+                        <p class="skill-card__desc">Контейнеризация приложений, docker-compose</p>
+                    </div>
+                    <div class="skill-card" data-category="tools">
+                        <h3 class="skill-card__title">Linux</h3>
+                        <p class="skill-card__desc">Командная строка, bash-скрипты, деплой</p>
+                    </div>
+                    <div class="skill-card" data-category="soft">
+                        <h3 class="skill-card__title">Командная работа</h3>
+                        <p class="skill-card__desc">Опыт работы в команде, agile-методологии</p>
+                    </div>
+                    <div class="skill-card" data-category="soft">
+                        <h3 class="skill-card__title">Решение задач</h3>
+                        <p class="skill-card__desc">Аналитическое мышление, алгоритмический подход</p>
+                    </div>
+                    <div class="skill-card" data-category="soft">
+                        <h3 class="skill-card__title">Обучаемость</h3>
+                        <p class="skill-card__desc">Быстрое освоение новых технологий и фреймворков</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects fade-in">
+            <div class="container">
+                <h2 class="section__title">Проекты</h2>
+                <div class="projects__grid">
+                    <article class="project-card">
+                        <div class="project-card__image"></div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Task Manager API</h3>
+                            <p class="project-card__desc">REST API для управления задачами с аутентификацией, ролями пользователей и уведомлениями по электронной почте.</p>
+                            <div class="project-card__tags">
+                                <span class="tag">FastAPI</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">JWT</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-card__image"></div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Погодный дашборд</h3>
+                            <p class="project-card__desc">Веб-приложение для отображения погоды в реальном времени с использованием стороннего API и визуализацией данных.</p>
+                            <div class="project-card__tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Flask</span>
+                                <span class="tag">OpenWeather API</span>
+                                <span class="tag">Chart.js</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-card__image"></div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Telegram-бот для учёта расходов</h3>
+                            <p class="project-card__desc">Бот для ежедневного учёта финансов с категориями, статистикой и экспортом данных в CSV.</p>
+                            <div class="project-card__tags">
+                                <span class="tag">aiogram</span>
+                                <span class="tag">SQLite</span>
+                                <span class="tag">Asyncio</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section experience fade-in">
+            <div class="container">
+                <h2 class="section__title">Опыт работы</h2>
+                <div class="timeline">
+                    <div class="timeline__item">
+                        <div class="timeline__header">
+                            <h3 class="timeline__title">Стажёр Python-разработчик</h3>
+                            <span class="timeline__period">Сентябрь 2024 — настоящее время</span>
+                        </div>
+                        <p class="timeline__company">ООО «ТехноСофт»</p>
+                        <ul class="timeline__list">
+                            <li>Разработка микросервисов на FastAPI</li>
+                            <li>Написание unit-тестов и интеграционных тестов</li>
+                            <li>Участие в код-ревью и планировании спринтов</li>
+                            <li>Оптимизация SQL-запросов, ускорение работы API на 30%</li>
+                        </ul>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__header">
+                            <h3 class="timeline__title">Фриланс — Backend-разработка</h3>
+                            <span class="timeline__period">Январь 2024 — Август 2024</span>
+                        </div>
+                        <ul class="timeline__list">
+                            <li>Разработка API для интернет-магазина</li>
+                            <li>Интеграция платёжных систем</li>
+                            <li>Написание парсеров для сбора данных</li>
+                            <li>Автоматизация отчётов и рассылки</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts" class="section contacts fade-in">
+            <div class="container">
+                <h2 class="section__title">Контакты</h2>
+                <div class="contacts__content">
+                    <p>Открыт к предложениям о стажировке и работе. Свяжитесь со мной любым удобным способом.</p>
+                    <ul class="contacts__list">
+                        <li>
+                            <span class="contacts__label">Email:</span>
+                            <a href="mailto:grigory.dev@example.com" class="contacts__value">grigory.dev@example.com</a>
+                        </li>
+                        <li>
+                            <span class="contacts__label">Telegram:</span>
+                            <a href="https://t.me/grigory_dev" class="contacts__value">@grigory_dev</a>
+                        </li>
+                        <li>
+                            <span class="contacts__label">GitHub:</span>
+                            <a href="https://github.com/grigory-dev" class="contacts__value">github.com/grigory-dev</a>
+                        </li>
+                        <li>
+                            <span class="contacts__label">Город:</span>
+                            <span class="contacts__value">Санкт-Петербург</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Выполнено с использованием: Qoder (AI-ассистент) — 25 минут</p>
+            <p>JavaScript: переключатель темы, фильтрация навыков по категориям, анимация появления секций при прокрутке (Intersection Observer)</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar__inner container">
+            <h1 class="topbar__title">Dashboard</h1>
+            <div class="topbar__actions">
+                <div class="topbar__add">
+                    <button class="btn btn--sm" data-add="todo">+ ToDo</button>
+                    <button class="btn btn--sm" data-add="quote">+ Quote</button>
+                    <button class="btn btn--sm" data-add="pokemon">+ Pokemon</button>
+                    <button class="btn btn--sm" data-add="users">+ Users</button>
+                    <button class="btn btn--sm" data-add="notes">+ Notes</button>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <span class="theme-toggle__icon theme-toggle__icon--moon">&#9790;</span>
+                    <span class="theme-toggle__icon theme-toggle__icon--sun">&#9788;</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="dashboard" class="dashboard-grid"></div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Выполнено с использованием: Qoder (AI-ассистент) — 40 минут</p>
+            <p>API: PokeAPI (pokeapi.co), RandomUser (randomuser.me)</p>
+            <p>ООП: базовый класс UIComponent, наследование (ToDoWidget, QuoteWidget, PokemonWidget, RandomUserWidget, NotesWidget), Dashboard — управление коллекцией виджетов</p>
+        </div>
+    </footer>
+
+    <script src="main.js" type="module"></script>
+</body>
+</html>

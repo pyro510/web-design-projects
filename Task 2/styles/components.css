@@ -1,0 +1,307 @@
+/* ===== Widget Card ===== */
+.widget {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    transition: all var(--transition);
+    overflow: hidden;
+    min-height: 340px;
+}
+
+.widget:hover {
+    box-shadow: var(--shadow-sm);
+    border-color: rgba(58, 184, 122, 0.25);
+}
+
+.widget__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--color-border);
+    background: rgba(13, 34, 24, 0.5);
+}
+
+.widget__title {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.widget__controls {
+    display: flex;
+    gap: 4px;
+}
+
+.widget__body {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 0;
+}
+
+.widget--minimized .widget__body {
+    display: none;
+}
+
+.widget--minimized {
+    max-height: 48px;
+}
+
+/* ===== ToDo Widget ===== */
+.todo-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.todo-form .btn--sm {
+    white-space: nowrap;
+    margin-right: 16px;
+}
+
+.todo-form__input {
+    flex: 1;
+    padding: 7px 10px;
+    background-color: var(--color-bg-input);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    color: var(--color-text);
+    transition: all var(--transition);
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-weight: 400;
+}
+
+.todo-form__input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 8px var(--color-glow-active);
+}
+
+.todo-form__input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    background-color: var(--color-bg-input);
+    border-radius: var(--radius);
+    transition: all var(--transition);
+}
+
+.todo-item:hover {
+    border-color: rgba(58, 184, 122, 0.2);
+}
+
+.todo-item__checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-accent);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.todo-item__text {
+    flex: 1;
+    font-size: 0.88rem;
+}
+
+.todo-item__text--done {
+    text-decoration: line-through;
+    color: var(--color-text-muted);
+}
+
+.todo-item__delete {
+    flex-shrink: 0;
+}
+
+/* ===== Quote Widget ===== */
+.quote-widget__text {
+    font-style: italic;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+    line-height: 1.65;
+}
+
+.quote-widget__author {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 14px;
+}
+
+.quote-widget__refresh {
+    align-self: flex-end;
+}
+
+/* ===== Pokemon Widget ===== */
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.pokemon-card {
+    background-color: var(--color-bg-input);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 10px;
+    text-align: center;
+    transition: all var(--transition);
+}
+
+.pokemon-card:hover {
+    border-color: rgba(58, 184, 122, 0.3);
+}
+
+.pokemon-card__img {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 6px;
+    image-rendering: pixelated;
+}
+
+.pokemon-card__name {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 4px;
+    color: var(--color-accent);
+}
+
+.pokemon-card__type {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    text-transform: capitalize;
+}
+
+/* ===== Random User Widget ===== */
+.users-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.user-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    background-color: var(--color-bg-input);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    transition: all var(--transition);
+}
+
+.user-card:hover {
+    border-color: rgba(58, 184, 122, 0.3);
+}
+
+.user-card__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--color-border);
+}
+
+.user-card__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.user-card__name {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.user-card__location {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-card__email {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===== Notes Widget ===== */
+.notes-textarea {
+    width: 100%;
+    min-height: 160px;
+    padding: 10px;
+    background-color: var(--color-bg-input);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    color: var(--color-text);
+    resize: vertical;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    transition: all var(--transition);
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-weight: 400;
+}
+
+.notes-textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 8px var(--color-glow-active);
+}
+
+.notes-textarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+.notes-status {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.75rem;
+    color: var(--color-accent);
+    margin-top: 8px;
+    text-align: right;
+}
+
+/* ===== Scrollbar ===== */
+.widget__body::-webkit-scrollbar,
+.users-list::-webkit-scrollbar,
+.pokemon-grid::-webkit-scrollbar {
+    width: 4px;
+}
+
+.widget__body::-webkit-scrollbar-track,
+.users-list::-webkit-scrollbar-track,
+.pokemon-grid::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+.widget__body::-webkit-scrollbar-thumb,
+.users-list::-webkit-scrollbar-thumb,
+.pokemon-grid::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 2px;
+}
