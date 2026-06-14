@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Runner</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <div class="game-container">
+            <canvas id="gameCanvas"></canvas>
+
+            <!-- HUD inside canvas area -->
+            <div class="hud" id="hud">
+                <div class="hud__score">
+                    <span class="hud__label">Счёт:</span>
+                    <span id="scoreDisplay">0</span>
+                </div>
+                <div class="hud__lives">
+                    <span id="livesDisplay">♥♥♥</span>
+                </div>
+                <div class="hud__highscore">
+                    <span class="hud__label">Рекорд:</span>
+                    <span id="highScoreDisplay">0</span>
+                </div>
+            </div>
+
+            <div class="game-overlay" id="startOverlay">
+                <div class="overlay__content">
+                    <h2>Pixel Runner</h2>
+                    <p>A/D или ←/→ — движение</p>
+                    <p>Space или W — прыжок</p>
+                    <p>P — пауза</p>
+                    <button class="btn btn--start" id="startBtn">Начать</button>
+                </div>
+            </div>
+
+            <div class="game-overlay game-overlay--hidden" id="pauseOverlay">
+                <div class="overlay__content">
+                    <h2>Пауза</h2>
+                    <button class="btn btn--start" id="resumeBtn">Продолжить</button>
+                    <button class="btn btn--start" id="restartBtnPause" style="margin-top:10px">Рестарт</button>
+                </div>
+            </div>
+
+            <div class="game-overlay game-overlay--hidden" id="gameOverOverlay">
+                <div class="overlay__content">
+                    <h2>Game Over</h2>
+                    <p>Ваш счёт: <span id="finalScore">0</span></p>
+                    <button class="btn btn--start" id="restartBtn">Заново</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Выполнено с использованием: Qoder (AI-ассистент) — 60 минут</p>
+            <p>Canvas API, игровой цикл (requestAnimationFrame), AABB коллизии, процедурная генерация, Web Audio API для звуков</p>
+        </div>
+    </footer>
+
+    <script src="js/InputHandler.js"></script>
+    <script src="js/Collision.js"></script>
+    <script src="js/Player.js"></script>
+    <script src="js/Platform.js"></script>
+    <script src="js/Coin.js"></script>
+    <script src="js/Enemy.js"></script>
+    <script src="js/Renderer.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

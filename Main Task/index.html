@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Quiz — Образовательная платформа</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="#" class="logo" data-screen="home">IT Quiz</a>
+            <nav class="nav">
+                <a href="#" data-screen="home">Тесты</a>
+                <a href="#" data-screen="history">Результаты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Screen 1: Home -->
+        <section id="screen-home" class="screen screen--active">
+            <h1 class="page-title">IT-тесты</h1>
+            <p class="page-subtitle">Проверьте свои знания в области информационных технологий</p>
+            <div class="home-layout">
+                <aside class="stats-panel" id="statsPanel"></aside>
+                <div class="quiz-list" id="quizList"></div>
+            </div>
+        </section>
+
+        <!-- Screen 2: Settings -->
+        <section id="screen-settings" class="screen">
+            <button class="btn-back" data-screen="home">&larr; Назад</button>
+            <div class="settings-card" id="settingsCard"></div>
+        </section>
+
+        <!-- Screen 3: Quiz -->
+        <section id="screen-quiz" class="screen">
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    <span class="quiz-info__title" id="quizTitle"></span>
+                    <span class="quiz-info__progress" id="quizProgress"></span>
+                </div>
+                <div class="quiz-timer" id="quizTimer"></div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar__fill" id="progressFill"></div>
+            </div>
+            <div class="question-area" id="questionArea"></div>
+            <div class="quiz-actions" id="quizActions"></div>
+        </section>
+
+        <!-- Screen 4: Results -->
+        <section id="screen-results" class="screen">
+            <div class="results-card" id="resultsCard"></div>
+        </section>
+
+        <!-- Screen 5: History -->
+        <section id="screen-history" class="screen">
+            <h1 class="page-title">Мои результаты</h1>
+            <div class="history-filters" id="historyFilters"></div>
+            <div class="history-list" id="historyList"></div>
+            <div class="history-empty" id="historyEmpty"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Выполнено с использованием: Qoder (AI-ассистент)</p>
+            <p>SPA на Vanilla JS, 4 теста по 25 вопросов, таймер, localStorage, модульная архитектура</p>
+        </div>
+    </footer>
+
+    <script src="js/Storage.js"></script>
+    <script src="js/Timer.js"></script>
+    <script src="js/Quiz.js"></script>
+    <script src="js/UI.js"></script>
+    <script src="js/quiz-data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
