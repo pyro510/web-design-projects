@@ -17,8 +17,20 @@ class App {
                 e.preventDefault();
                 const screen = link.dataset.screen;
                 this._navigate(screen);
+                document.body.classList.remove('nav--open');
+                const burger = document.querySelector('.burger');
+                if (burger) burger.classList.remove('burger--active');
             });
         });
+
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav');
+        if (burger && nav) {
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('burger--active');
+                document.body.classList.toggle('nav--open');
+            });
+        }
     }
 
     _navigate(screen) {
@@ -176,6 +188,7 @@ class App {
     _finishQuiz() {
         this.timer.stop();
         const results = this.quiz.getResults();
+        Storage.saveResult(results);
         this._showResults(results);
     }
 
@@ -185,8 +198,7 @@ class App {
             document.getElementById('resultsCard'),
             results,
             () => {},
-            () => this._showHome(),
-            (r) => Storage.saveResult(r)
+            () => this._showHome()
         );
     }
 

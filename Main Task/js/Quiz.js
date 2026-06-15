@@ -56,10 +56,10 @@ class Quiz {
             percentage: Math.round((this.score / this.totalQuestions) * 100),
             answers: [...this.answers],
             questions: this.questions.map((q) => ({
-                question: q.question,
+                question: q.q,
                 options: q.options,
                 correct: q.correct,
-                explanation: q.explanation,
+                explanation: q.explanation || '',
             })),
         };
     }

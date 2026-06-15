@@ -140,7 +140,7 @@ class UI {
         area.innerHTML = `
             <div class="question">
                 <span class="question__number">${questionIndex + 1}</span>
-                <h3 class="question__text">${q.question}</h3>
+                <h3 class="question__text">${q.q}</h3>
             </div>
             <div class="options">
                 ${q.options
@@ -197,20 +197,24 @@ class UI {
         fillEl.style.width = `${quiz.progress * 100}%`;
     }
 
-    renderResults(container, results, onReview, onHome, onSave) {
-        const { percentage, score, total } = results;
-        let grade, colorClass;
+    renderResults(container, results, onReview, onHome) {
+        const { percentage } = results;
+        let grade, message, colorClass;
         if (percentage >= 90) {
-            grade = 'Отлично';
+            grade = 'Превосходно!';
+            message = 'Ты настоящий эксперт! Так держать!';
             colorClass = 'results__grade--excellent';
         } else if (percentage >= 70) {
-            grade = 'Хорошо';
+            grade = 'Отличная работа!';
+            message = 'Молодец! Ещё чуть-чуть и будет идеально!';
             colorClass = 'results__grade--good';
         } else if (percentage >= 50) {
-            grade = 'Удовлетворительно';
+            grade = 'Хороший результат!';
+            message = 'Неплохо! Учи больше и станет ещё лучше!';
             colorClass = 'results__grade--pass';
         } else {
-            grade = 'Не сдано';
+            grade = 'Не расстраивайся!';
+            message = 'Старайся лучше! Каждый провал — шаг к успеху!';
             colorClass = 'results__grade--fail';
         }
 
@@ -218,12 +222,12 @@ class UI {
             <div class="results">
                 <div class="results__circle ${colorClass}">${percentage}%</div>
                 <h2 class="results__title">${grade}</h2>
-                <p class="results__score">${score} из ${total} правильных</p>
+                <p class="results__message">${message}</p>
+                <p class="results__score">${results.score} из ${results.total} правильных</p>
                 <p class="results__quiz">${results.title} — ${results.level}</p>
             </div>
             <div class="results-actions">
                 <button class="btn btn--secondary" id="resultsReview">Разбор ошибок</button>
-                <button class="btn btn--success" id="resultsSave">Сохранить результат</button>
                 <button class="btn btn--primary" id="resultsHome">На главную</button>
             </div>
             <div class="review" id="reviewSection" style="display:none"></div>
@@ -236,12 +240,6 @@ class UI {
             if (review.children.length === 0) {
                 this.renderReview(review, results);
             }
-        });
-        container.querySelector('#resultsSave').addEventListener('click', () => {
-            onSave(results);
-            const saveBtn = container.querySelector('#resultsSave');
-            saveBtn.textContent = 'Сохранено';
-            saveBtn.disabled = true;
         });
     }
 
